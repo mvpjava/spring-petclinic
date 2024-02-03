@@ -28,6 +28,7 @@ artifacts:
     - target/spring-petclinic-3.2.0-SNAPSHOT.jar
     - appspec.yml
     - start-process.sh
+    - stop-process.sh
   discard-paths: yes
 cache:
   paths:
