@@ -11,3 +11,7 @@ hooks:
     - location: start-process.sh
       timeout: 300
       runas: root
+  ApplicationStop:
+    - location: stop_process.sh
+      timeout: 300
+      runas: root
