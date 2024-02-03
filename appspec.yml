@@ -7,11 +7,13 @@ files:
     destination: /tmp
 
 hooks:
+  #ApplicationStop is special because it runs before new  archive bundle is downloaded
+  ApplicationStop:
+      - location: stop-process.sh
+        timeout: 300
+        runas: root
   ApplicationStart:
     - location: start-process.sh
       timeout: 300
       runas: root
-  ApplicationStop:
-    - location: stop-process.sh
-      timeout: 300
-      runas: root
+
