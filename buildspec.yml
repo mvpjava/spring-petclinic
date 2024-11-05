@@ -13,6 +13,8 @@ phases:
       #- ./mvnw clean install
       #- ./mvnw install -DskipTests
       - ./mvnw test -Dtest=org.springframework.samples.petclinic.model.*Tests
+      - ./mvnw test -Dtest=org.springframework.samples.petclinic.owner.*Tests
+
   post_build:
     commands:
       - echo Build completed on `date`
