@@ -9,8 +9,6 @@ phases:
       - echo Nothing to do in the pre_build phase...
   build:
     commands:
-      #- ./mvnw clean install
-      #- ./mvnw install -DskipTests
       - ./mvnw clean test -Dtest=org.springframework.samples.petclinic.model.*Tests
       - ./mvnw test       -Dtest=org.springframework.samples.petclinic.owner.*Tests
       - ./mvnw package
@@ -26,6 +24,12 @@ reports:
     base-directory: 'target/surefire-reports'
     discard-paths: yes
     file-format: JUNITXML
+  code-coverage-JaCoco:
+    files:
+      - '**/*'
+    base-directory: 'target/site/jacoco'
+    discard-paths: no
+    file-format: JACOCOXML
 artifacts:
   files:
     - target/spring-petclinic-3.2.0-SNAPSHOT.jar
