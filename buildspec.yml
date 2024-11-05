@@ -9,11 +9,11 @@ phases:
       - echo Nothing to do in the pre_build phase...
   build:
     commands:
-      - echo Build started on `date`
       #- ./mvnw clean install
       #- ./mvnw install -DskipTests
-      - ./mvnw clean test -Dtest=org.springframework.samples.petclinic.model.*Tests, \
-      org.springframework.samples.petclinic.owner.*Tests package
+      - ./mvnw clean test -Dtest=org.springframework.samples.petclinic.model.*Tests
+      - ./mvnw test       -Dtest=org.springframework.samples.petclinic.owner.*Tests
+      - ./mvnw package
 
   post_build:
     commands:
