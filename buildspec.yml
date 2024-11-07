@@ -36,6 +36,8 @@ artifacts:
     - appspec.yml
     - start-process.sh
     - stop-process.sh
+    - src/test/jmeter/run_jmeter_tests.sh
+    - src/test/jmeter/petclinic_test_plan.jmx
   discard-paths: yes
 cache:
   paths:
