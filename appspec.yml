@@ -5,7 +5,8 @@ os: linux
 files:
   - source: spring-petclinic-3.2.0-SNAPSHOT.jar
     destination: /tmp
-
+  - source: petclinic_test_plan.jmx
+    destination: /tmp
 hooks:
   #ApplicationStop is special because it runs before new  archive bundle is downloaded
   ApplicationStop:
@@ -16,4 +17,7 @@ hooks:
     - location: start-process.sh
       timeout: 300
       runas: root
-
+  AfterAllowTraffic:
+    - location: run_jmeter_tests.sh
+      timeout: 300
+      runas: root
