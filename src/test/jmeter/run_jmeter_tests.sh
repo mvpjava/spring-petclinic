@@ -13,6 +13,9 @@ JMETER_DOWNLOAD_FILENAME_TARBALL="$JMETER_DOWNLOAD_BASE_FILENAME.tgz"
 wget "https://downloads.apache.org//jmeter/binaries/$JMETER_DOWNLOAD_FILENAME_TARBALL"
 tar xzf "$JMETER_DOWNLOAD_FILENAME_TARBALL" -C /opt
 
+#Clean up any previous test results
+rm -f /tmp/results.jtl > /dev/null 
+
 # Run JMeter against the local application
 /opt/$JMETER_DOWNLOAD_BASE_FILENAME/bin/jmeter -n -t /tmp/petclinic_test_plan.jmx -l /tmp/results.jtl -JTARGET_URL=http://localhost:8080
 
